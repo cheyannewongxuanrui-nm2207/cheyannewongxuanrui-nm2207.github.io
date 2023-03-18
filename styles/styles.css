@@ -1,5 +1,5 @@
 body {
-  background-color: #334155;
+  background-color: #c7d9be;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: white;
@@ -12,11 +12,11 @@ body {
 }
 
 .counter {
-  color: #fbbf24;
+  color: #6c9556;
 }
 
 h2 {
-  color: #f9a8d4;
+  color: #6c9556;
 }
 
 /* CSS */

@@ -1,0 +1,23 @@
+#narratorText {
+    /*width: 800px;*/
+    width: 90%;
+	height: 20%;
+    border: 5px solid green;
+    padding: 50px;
+    margin: auto;
+    position: absolute;
+	bottom: 2%;
+	left: 1%;
+    text-align: center;
+  }
+
+.options {
+    padding: 10px;
+    margin: auto;
+    position: absolute;
+	bottom: 5%;
+	left: 30%;
+    text-align: center;
+
+}
+  
