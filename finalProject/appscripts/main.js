@@ -11,7 +11,7 @@ option2.addEventListener("click", branch2);
 option3.addEventListener("click", branch2);
 
 function branch2() {
-  document.getElementById("narratorText").innerHTML = "Narrator: What? No, you’re here to slay the princess.";
+  document.getElementById("narratorText").innerHTML = "What? No, you’re here to slay the princess.";
   option1.removeEventListener("click", branch2);
   option2.removeEventListener("click", branch2);
   option3.removeEventListener("click", branch2);
@@ -28,7 +28,7 @@ function branch2() {
 
 //Branch3 dialogue
 function branch3() {
-  document.getElementById("narratorText").innerHTML = "Narrator: … That was surprisingly easy. Well, it’s not my job to question your morals. If you’re going to do this, you won’t succeed empty-handed. Pick a chest, Hero. Choose wisely."
+  document.getElementById("narratorText").innerHTML = "… That was surprisingly easy. Well, it’s not my job to question your morals. If you’re going to do this, you won’t succeed empty-handed. Pick a chest, Hero. Choose wisely."
   option1.removeEventListener("click", branch3)
   option2.removeEventListener("click", branch3);
   option3.removeEventListener("click", branch3);
@@ -44,7 +44,7 @@ function branch3() {
 
 //Branch4 dialogue
 function branch4() {
-  document.getElementById("narratorText").innerHTML = "Narrator: If you don’t, a terrible tragedy will befall the kingdom. You and I included. You’re the only one who can save us from the prophecy, Hero."
+  document.getElementById("narratorText").innerHTML = "If you don’t, a terrible tragedy will befall the kingdom. You and I included. You’re the only one who can save us from the prophecy, Hero."
   option1.removeEventListener("click", branch3);
   option2.removeEventListener("click", branch4);
   option3.removeEventListener("click", branch4);
@@ -59,7 +59,7 @@ function branch4() {
 
 //Branch5 dialogue
 function branch5() {
-  document.getElementById("narratorText").innerHTML = "Narrator: I don’t make the rules. If you don’t kill the princess, all of us are going to die.";
+  document.getElementById("narratorText").innerHTML = "I don’t make the rules. If you don’t kill the princess, all of us are going to die.";
   option2.removeEventListener("click", branch5);
   option3.removeEventListener("click", branch5);
 
@@ -73,7 +73,7 @@ function branch5() {
 
 //Branch6 dialogue
 function branch6() {
-  document.getElementById("narratorText").innerHTML = "Narrator: If you’re going to do this, you won’t succeed empty-handed. Pick a chest, Hero. Choose wisely.";
+  document.getElementById("narratorText").innerHTML = "If you’re going to do this, you won’t succeed empty-handed. Pick a chest, Hero. Choose wisely.";
   option1.style.display = "inline"
   option2.removeEventListener("click", branch6);
   option3.removeEventListener("click", branch6);
@@ -89,7 +89,7 @@ function branch6() {
 
 //BadEnd1 dialogue
 function badEnd1() {
-  document.getElementById("narratorText").innerHTML = "Narrator: Fine, have it your way. You fall back asleep for who-knows-how-long. Your sleep is restless, in which you have a never-ending nightmare of being chased by something you can’t see. When you finally wake, it’s pitch black outside and dead silent. You open the cabin door to an endless void. You call out, but your voice is swallowed by the darkness. And soon, you are too. BAD ENDING"
+  document.getElementById("narratorText").innerHTML = "Fine, have it your way. You fall back asleep for who-knows-how-long. Your sleep is restless, in which you have a never-ending nightmare of being chased by something you can’t see. When you finally wake, it’s pitch black outside and dead silent. You open the cabin door to an endless void. You call out, but your voice is swallowed by the darkness. And soon, you are too. <br></br><br>BAD ENDING</br>"
   option2.removeEventListener("click", badEnd1);
   option3.removeEventListener("click", badEnd1);
 

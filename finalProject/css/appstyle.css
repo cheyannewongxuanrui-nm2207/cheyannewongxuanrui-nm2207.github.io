@@ -1,7 +1,7 @@
-#narratorText {
-    /*width: 800px;*/
+.container {
+    font-family: optima, sans-serif;
     width: 90%;
-	height: 20%;
+	height: 23%;
     border: 5px solid green;
     padding: 50px;
     margin: auto;
@@ -9,15 +9,38 @@
 	bottom: 2%;
 	left: 1%;
     text-align: center;
-  }
+}
 
-.options {
+.nameContainer {
+    font-family: optima, sans-serif;
+    width: 7%;
+	height: 7%;
+    border: 5px solid green;
+    padding: 5px;
+    margin: auto;
+    position: absolute;
+	bottom: 43%;
+	left: 1%;
+    text-align: center;
+}
+/*#narratorText {
+    /*width: 800px;*/
+   
+  
+
+/*#options {
     padding: 10px;
     margin: auto;
     position: absolute;
 	bottom: 5%;
 	left: 30%;
     text-align: center;
+    /*display: flex;
+    justify-content: center;*/
 
+
+
+button {
+    font-family: optima, sans-serif;
 }
   

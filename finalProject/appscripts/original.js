@@ -4,6 +4,8 @@
 
 //Branch1 dialogue
 let i = 0;
+let button = document.createElement("button");
+button.textContent = '“Princess? Heck yeah! Let’s get going right now!”';
 
 
 function branch1() {
@@ -16,12 +18,12 @@ function branch1() {
       //clearTimeout(branch1, speed);
     } else {
 
-    let button = document.createElement("button");
-    button.textContent = '“Princess? Heck yeah! Let’s get going right now!”';
+    //let button = document.createElement("button");
+    //button.textContent = '“Princess? Heck yeah! Let’s get going right now!”';
     document.getElementById("option1").appendChild(button);
     button.addEventListener("click", branch2);
 
-    let button2 = document.createElement("button");
+    /*let button2 = document.createElement("button");
     button2.textContent = '“Oh god, not this fairytale trope again. Slay the dragon, rescue the princess, yada yada. Boring.”';
     document.getElementById("option2").appendChild(button2);
     button2.addEventListener("click", branch2);
@@ -29,7 +31,7 @@ function branch1() {
     let button3 = document.createElement("button");
     button3.textContent = '“... I’m going back to sleep.”';
     document.getElementById("option3").appendChild(button3);
-    button3.addEventListener("click", branch2);
+    button3.addEventListener("click", branch2);*/
 
   }
 
