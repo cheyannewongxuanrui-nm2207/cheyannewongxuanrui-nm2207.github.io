@@ -5,10 +5,12 @@
     margin: -8px;
     z-index: 100;
     position: fixed;
+    /* I set the original opacity to 0, and set up the fade in and out effect. */
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
 }
 
+/* When this is called in main.js, it will change the opacity to 1, making the black box visible */
 #transition.fade {
     opacity: 1;
   }

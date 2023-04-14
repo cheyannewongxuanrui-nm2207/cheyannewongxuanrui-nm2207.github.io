@@ -1,5 +1,5 @@
+//Picture references are in Final Writeup document
 //INTRO
-
 let option1 = document.getElementById("option1");
 option1.innerHTML = '“Princess? Heck yeah! Let’s get going right now!”';
 
@@ -11,44 +11,58 @@ option3.innerHTML = '“... I’m going back to sleep.”';
 
 
 //Transition
+//Adds a black box that fades in and out between scenes.
 function transition() {
+  //Grab the css element transition.fade to make the transition smoother by fading in and out. I explain this further in the css.
   document.getElementById("transition").classList.toggle("fade");
+
+  //I'm changing the zIndex of the "transition" div element (which has a black background) to bring it to the front.
   document.getElementById("transition").style.zIndex = '500';
+
+  //This changes the zIndex back to what it originally was, so that the "transition" div element is once again hidden behind the other divs.
   function revert() {
     document.getElementById("transition").style.zIndex = '100';
   }
+  
+  //This sets a timer for when to trigger the revert function.
   setTimeout(revert,550);
 }
 
 //Branch1 dialogue
 function branch1() {
+  //Hide the buttons while the typewriting effect is playing.
   option1.style.display = "none";
   option2.style.display = "none";
   option3.style.display = "none";
 
   let text = 'Narrator: You open your eyes, having just awoken from a long slumber. You are in a cabin at the base of a mountain. At the top of the mountain is a tower. And in that tower is a princess, guarded by a dragon.';
   let speed = 15;
+  //Set the text to be an empty string first to remove any existing text in the textbox.
   document.getElementById("narratorText").innerText = '';
   let i = 0;
 
+  //Typewriter function.
   function typewriter() {
+    //If i is shorter than the text length defined above, the function will add one character at a time to the end of the string at the speed I specified.
     if (i < text.length) {
       document.getElementById("narratorText").innerHTML += text.charAt(i);
       i++;
       setTimeout(typewriter, speed);
-    } else {
+    } else { //If i = length of text (ie. when the typewriting effect ends), the buttons are displayed and event listeners are added to them.
       option1.style.display = "inline";
       option2.style.display = "inline";
       option3.style.display = "inline";
     
+      //Event listeners: on click, trigger function branch2.
       option1.addEventListener("click", branch2);
       option2.addEventListener("click", branch2);
       option3.addEventListener("click", branch2);
   }
   }
+  //Call the typewriter function.
   typewriter();
   };
-  
+//Call the branch1 function so that the dialogue begins upon loading the page.
 branch1()
 
 //Branch2 dialogue
@@ -57,6 +71,7 @@ function branch2() {
   option2.style.display = "none";
   option3.style.display = "none";
 
+  //Remove the event listeners added in the previous function (branch1) so that different event listeners can be added in this function.
   option1.removeEventListener("click", branch2);
   option2.removeEventListener("click", branch2);
   option3.removeEventListener("click", branch2);
@@ -68,9 +83,10 @@ function branch2() {
 
   function typewriter() {
     if (i < text.length) {
+      //I added an if-else loop here that adds "<br>" to the string once it encounters the characters "\n". This will trigger a line break.
       if (text.charAt(i) == "\n") {
         document.getElementById("narratorText").innerHTML += "<br>";
-      } else {
+      } else { //If there is no "\n", the string continues as per normal.
         document.getElementById("narratorText").innerHTML += text.charAt(i);
       }
       i++;
@@ -252,6 +268,14 @@ function branch6() {
 
 //BadEnd1 dialogue
 function badEnd1() {
+  //Calls transition effect.
+  transition();
+
+  //Changes background to a black image.
+  document.getElementById("background").style.backgroundImage = 'url(resources/black.jpeg)';
+  //Sets the image size to cover the screen.
+  document.getElementById("background").style.backgroundSize = "cover";
+
   option1.style.display = "none";
   option2.style.display = "none";
   option3.style.display = "none";
@@ -432,6 +456,8 @@ function branch10() {
 //Branch11 dialogue
 function branch11() {
   transition();
+
+  //Adds the image to the "sprite" div element
   document.getElementById("sprite").style.backgroundImage = 'url(resources/oldwoman.png)';
 
   option1.style.display = "none";
@@ -546,6 +572,8 @@ function branch13() {
 //Branch14 dialogue
 function branch14() {
   transition();
+
+  //Hides the image in the "sprite" div element
   document.getElementById("sprite").style.display = "none";
 
   option1.style.display = "none";
@@ -889,7 +917,9 @@ function branch21() {
 }
 
 //Branch22 dialogue
+//I'm initialising a variable called 'midas' here to act as an identifier for a later dialogue branch.
 let midas = 0;
+//When this function is called, adds 1 to variable 'midas' and logs its value to the console.
 function midasTrue() {
   midas++;
   console.log(midas);
@@ -925,6 +955,7 @@ function branch22() {
 
       option2.innerHTML = "(Continue up the tower.)";
 
+      //Adds two event listeners: on click, call the midasTrue function and the branch52 function.
       option2.addEventListener("click", midasTrue);
       option2.addEventListener("click", branch52);
      };
@@ -1302,8 +1333,9 @@ function badEnd3() {
 }
 
 //EXCALIBUR
-//Counter
+//Counter - I'm initialising a variable called 'sword' that logs the number of times Excalibur is used by the player. If sword = 3, a bad end is triggered.
 let sword = 0;
+//When function is called, adds 1 to variable 'sword' and logs its value to the console.
 function counter() {
   sword++;
   console.log(sword);
@@ -1344,6 +1376,7 @@ function branch31() {
       option1.innerHTML = "(Use Excalibur to clear the vines. So cool.)";
       option2.innerHTML = "(Use your bare hands instead.)";
     
+      //Add an event listener that will call the counter function if option1 (use Excalibur) is selected.
       option1.addEventListener("click", counter);
       option1.addEventListener("click", branch32);
       option2.addEventListener("click", branch32);
@@ -1365,6 +1398,7 @@ function branch32() {
   option1.removeEventListener("click", branch32);
   option2.removeEventListener("click", branch32);
 
+  //If the value of variable 'sword' is 1 (meaning it has been used once), it will display this text. Else it will display a different text.
   if (sword === 1) {
     text = "Narrator:\nYou feel a surge of power. The sword seems to come alive in your hands. The vines fall away, and for a moment you feel undefeatable. You emerge on the other side, triumphant.\n\nThe sword feels heavier in your hands. You wonder if it’s just your imagination.";
   } else {
@@ -2533,6 +2567,7 @@ function branch57() {
   option2.style.display = "none";
   option3.style.display = "none";
 
+  option1.removeEventListener("click", branch57);
   option2.removeEventListener("click", branch57);
 
   text = "Narrator:\nWell, no time to worry about that now. Would you look at that, you’ve reached the top already.\n\nA heavy wooden door stands before you – behind it lies the princess’s chambers. Are you ready, Hero?";
@@ -2636,8 +2671,9 @@ function branch59() {
       option1.innerHTML = "(Kill the princess.)";
       option2.innerHTML = "“I can’t do it.” (Spare the princess.)";
     
-      if (midas === 0) {
-        option1.addEventListener("click", counter);
+      //If the player reached this branch through the Midas route, the midasTrue function would have added 1 to the 'midas' variable in branch22.
+      if (midas === 0) { //midas = 0 means the route is Excalibur. Added an event listener to call the counter function if Excalibur is used again.
+        option1.addEventListener("click", counter); 
         option1.addEventListener("click", branch61);
       } else {
         option1.addEventListener("click", branch60);
@@ -2699,6 +2735,7 @@ function branch61() {
     option2.style.display = "none";
     option3.style.display = "none";
 
+    option1.removeEventListener("click", counter);
     option1.removeEventListener("click", branch61);
     option2.removeEventListener("click", branch62);
 
@@ -2874,7 +2911,6 @@ function branch64() {
   option2.style.display = "none";
   option3.style.display = "none";
 
-  option1.removeEventListener("click", counter)
   option2.removeEventListener("click", branch64);
 
   text = "Narrator:\nBut —\n\nWait. The totem is glowing! How is this possible—! … Ahem.\n\nThe totem begins to glow brighter and brighter still, until it fills the dark room with the brilliance of a thousand suns. It’s so bright that you’re forced to close your eyes.";
