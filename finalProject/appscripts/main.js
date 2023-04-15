@@ -967,7 +967,7 @@ function branch22() {
 function branch23() {
   transition();
   document.getElementById("sprite").style.display = "inline";
-  document.getElementById("sprite").style.backgroundImage = 'url(resources/oldwomangold.png)';
+  document.getElementById("sprite").style.backgroundImage = 'url(resources/oldwomang.png)';
   
   option1.style.display = "none";
   option2.style.display = "none";
