@@ -1,4 +1,4 @@
-//Picture references are in Final Writeup document
+//Picture sources are in the document titled 'References and Image Sources'.
 //INTRO
 let option1 = document.getElementById("option1");
 option1.innerHTML = '“Princess? Heck yeah! Let’s get going right now!”';
