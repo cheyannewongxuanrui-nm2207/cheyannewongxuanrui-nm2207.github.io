@@ -2231,8 +2231,8 @@ function branch49() {
       i++;
       setTimeout(typewriter, speed);
     } else {
-      option1.style.display = "inlinr";
-      option2.style.display = "nonr";
+      option1.style.display = "inline";
+      option2.style.display = "none";
       option3.style.display = "none";
     
       option1.innerHTML = "“... Wow. Lucky!”";
